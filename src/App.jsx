@@ -13,7 +13,7 @@ export default function App() {
   const fetchFormats = async () => {
     try {
       loadingBar.current.continuousStart();
-      const res = await axios.get("http://localhost:3000/formats", {
+      const res = await axios.get("https://ytserver-b1j0.onrender.com/formats", {
         params: { url },
       });
       setFormats(res.data.formats);
@@ -32,7 +32,7 @@ export default function App() {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/download",
+        "https://ytserver-b1j0.onrender.com/download",
         { url, format_id: format.format_id, hasAudio: format.hasAudio, hasVideo: format.hasVideo, id },
         { responseType: "blob" }
       );
